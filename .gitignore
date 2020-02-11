@@ -9,8 +9,7 @@ modules.xml
 vcs.xml
 workspace.xml
 target/
-.idea
-
+.name
 *.versionsBackup
 .surefire*
 scala_settings.xml
