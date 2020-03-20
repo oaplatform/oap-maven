@@ -16,7 +16,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <oap.project.version>1.0.2</oap.project.version>
+        <oap.project.version>1.0.3</oap.project.version>
         <build.counter>1</build.counter>
         <oap.deps.maven.plugins.enforcer>3.0.0-M3</oap.deps.maven.plugins.enforcer>
         <oap.deps.maven.plugins.surefire>2.22.2</oap.deps.maven.plugins.surefire>
@@ -49,13 +49,16 @@
                     <disableXmlReport>false</disableXmlReport>
                     <printSummary>true</printSummary>
                     <forkedProcessTimeoutInSeconds>4800</forkedProcessTimeoutInSeconds>
-                    <!--<forkMode>once</forkMode>-->
                     <useSystemClassLoader>false</useSystemClassLoader>
                     <runOrder>balanced</runOrder>
+                    <argLine>--enable-preview</argLine>
                     <includes>
                         <include>**/*Test.*</include>
                     </includes>
-                    <excludedGroups>performance</excludedGroups>
+                    <excludes>
+                        <exclude>**/*Performance.*</exclude>
+                        <exclude>**/*PerfTest.*</exclude>
+                    </excludes>
                 </configuration>
             </plugin>
             <plugin>
@@ -147,6 +150,7 @@
                             <forkMode>once</forkMode>
                             <useSystemClassLoader>false</useSystemClassLoader>
                             <runOrder>balanced</runOrder>
+                            <argLine>--enable-preview</argLine>
                             <includes>
                                 <include>**/*Performance.*</include>
                                 <include>**/*Perftest.*</include>
