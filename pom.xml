@@ -7,7 +7,7 @@
     <packaging>pom</packaging>
     <groupId>oap</groupId>
     <artifactId>oap.maven</artifactId>
-    <version>1.0.1</version>
+    <version>${oap.project.version}</version>
 
     <properties>
         <maven.compiler.source>13</maven.compiler.source>
@@ -16,120 +16,116 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
+        <oap.project.version>1.0.2</oap.project.version>
         <build.counter>1</build.counter>
-        <deps.maven.plugins.enforcer>3.0.0-M3</deps.maven.plugins.enforcer>
-        <deps.maven.plugins.surefire>2.19.1</deps.maven.plugins.surefire>
+        <oap.deps.maven.plugins.enforcer>3.0.0-M3</oap.deps.maven.plugins.enforcer>
+        <oap.deps.maven.plugins.surefire>2.22.2</oap.deps.maven.plugins.surefire>
     </properties>
 
     <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.0</version>
-                    <configuration>
-                        <useIncrementalCompilation>true</useIncrementalCompilation>
-                        <compilerArgs>
-                            <arg>-parameters</arg>
-                            <arg>-Xlint:unchecked</arg>
-                            <arg>-Xlint:preview</arg>
-                            <arg>--enable-preview</arg>
-                        </compilerArgs>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>${deps.maven.plugins.surefire}</version>
-                    <configuration>
-                        <trimStackTrace>false</trimStackTrace>
-                        <!--TODO: remove this ignore once all tests pass
-                             For tests dependent on the external services, make the separate profile to run them
-                             within a specific environment-->
-                        <testFailureIgnore>true</testFailureIgnore>
-                        <useFile>true</useFile>
-                        <disableXmlReport>false</disableXmlReport>
-                        <printSummary>true</printSummary>
-                        <forkedProcessTimeoutInSeconds>4800</forkedProcessTimeoutInSeconds>
-                        <!--<forkMode>once</forkMode>-->
-                        <useSystemClassLoader>false</useSystemClassLoader>
-                        <runOrder>balanced</runOrder>
-                        <includes>
-                            <include>**/*Test.*</include>
-                        </includes>
-                        <excludedGroups>PERFORMANCE</excludedGroups>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <version>3.0.1</version>
-                    <artifactId>maven-source-plugin</artifactId>
-                    <executions>
-                        <execution>
-                            <id>attach-sources</id>
-                            <goals>
-                                <goal>jar</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>flatten-maven-plugin</artifactId>
-                    <version>1.1.0</version>
-                    <configuration>
-                        <updatePomFile>true</updatePomFile>
-                        <flattenMode>resolveCiFriendliesOnly</flattenMode>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <id>flatten</id>
-                            <phase>process-resources</phase>
-                            <goals>
-                                <goal>flatten</goal>
-                            </goals>
-                        </execution>
-                        <execution>
-                            <id>flatten.clean</id>
-                            <phase>clean</phase>
-                            <goals>
-                                <goal>clean</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-enforcer-plugin</artifactId>
-                    <version>${deps.maven.plugins.enforcer}</version>
-                    <executions>
-                        <execution>
-                            <id>no-duplicate-declared-dependencies</id>
-                            <goals>
-                                <goal>enforce</goal>
-                            </goals>
-                            <configuration>
-                                <rules>
-                                    <banDuplicatePomDependencyVersions/>
-                                </rules>
-                            </configuration>
-                        </execution>
-                        <execution>
-                            <id>enforce</id>
-                            <configuration>
-                                <rules>
-                                    <requireUpperBoundDeps/>
-                                </rules>
-                            </configuration>
-                            <goals>
-                                <goal>enforce</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-            </plugins>
-        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <useIncrementalCompilation>true</useIncrementalCompilation>
+                    <compilerArgs>
+                        <arg>-parameters</arg>
+                        <arg>-Xlint:unchecked</arg>
+                        <arg>-Xlint:preview</arg>
+                        <arg>--enable-preview</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${oap.deps.maven.plugins.surefire}</version>
+                <configuration>
+                    <trimStackTrace>false</trimStackTrace>
+                    <testFailureIgnore>true</testFailureIgnore>
+                    <useFile>true</useFile>
+                    <disableXmlReport>false</disableXmlReport>
+                    <printSummary>true</printSummary>
+                    <forkedProcessTimeoutInSeconds>4800</forkedProcessTimeoutInSeconds>
+                    <!--<forkMode>once</forkMode>-->
+                    <useSystemClassLoader>false</useSystemClassLoader>
+                    <runOrder>balanced</runOrder>
+                    <includes>
+                        <include>**/*Test.*</include>
+                    </includes>
+                    <excludedGroups>performance</excludedGroups>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <version>3.0.1</version>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+                <version>1.1.0</version>
+                <configuration>
+                    <updatePomFile>true</updatePomFile>
+                    <flattenMode>resolveCiFriendliesOnly</flattenMode>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>flatten</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>flatten</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>flatten.clean</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>${oap.deps.maven.plugins.enforcer}</version>
+                <executions>
+                    <execution>
+                        <id>no-duplicate-declared-dependencies</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <banDuplicatePomDependencyVersions/>
+                            </rules>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>enforce</id>
+                        <configuration>
+                            <rules>
+                                <requireUpperBoundDeps/>
+                            </rules>
+                        </configuration>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
 
     <profiles>
@@ -140,7 +136,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
-                        <version>${deps.maven.plugins.surefire}</version>
+                        <version>${oap.deps.maven.plugins.surefire}</version>
                         <configuration>
                             <trimStackTrace>false</trimStackTrace>
                             <testFailureIgnore>true</testFailureIgnore>
@@ -153,7 +149,7 @@
                             <runOrder>balanced</runOrder>
                             <includes>
                                 <include>**/*Performance.*</include>
-                                <include>**/*PerfTest.*</include>
+                                <include>**/*Perftest.*</include>
                             </includes>
                         </configuration>
                     </plugin>
