@@ -21,6 +21,7 @@
         <oap.deps.maven.enforcer.version>3.0.0-M3</oap.deps.maven.enforcer.version>
         <oap.deps.maven.surefire.version>2.22.2</oap.deps.maven.surefire.version>
         <oap.deps.maven.checkstyle.version>3.1.1</oap.deps.maven.checkstyle.version>
+        <oap.deps.maven.source.version>3.0.1</oap.deps.maven.source.version>
     </properties>
 
     <build>
@@ -64,7 +65,7 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <version>3.0.1</version>
+                <version>${oap.deps.maven.source.version}</version>
                 <artifactId>maven-source-plugin</artifactId>
                 <executions>
                     <execution>
