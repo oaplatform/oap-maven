@@ -22,6 +22,7 @@
         <oap.deps.maven.surefire.version>2.22.2</oap.deps.maven.surefire.version>
         <oap.deps.maven.checkstyle.version>3.1.1</oap.deps.maven.checkstyle.version>
         <oap.deps.maven.source.version>3.0.1</oap.deps.maven.source.version>
+        <oap.deps.maven.flatten.version>1.1.0</oap.deps.maven.flatten.version>
     </properties>
 
     <build>
@@ -79,7 +80,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>flatten-maven-plugin</artifactId>
-                <version>1.1.0</version>
+                <version>${oap.deps.maven.flatten.version}</version>
                 <configuration>
                     <updatePomFile>true</updatePomFile>
                     <flattenMode>resolveCiFriendliesOnly</flattenMode>
