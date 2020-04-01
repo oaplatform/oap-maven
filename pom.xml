@@ -7,7 +7,7 @@
     <packaging>pom</packaging>
     <groupId>oap</groupId>
     <artifactId>oap.maven</artifactId>
-    <version>${oap.project.version}</version>
+    <version>${oap.maven.project.version}</version>
 
     <properties>
         <maven.compiler.source>13</maven.compiler.source>
@@ -16,7 +16,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <oap.project.version>1.0.8</oap.project.version>
+        <oap.maven.project.version>1.0.9</oap.maven.project.version>
         <build.counter>1</build.counter>
         <oap.deps.maven.enforcer.version>3.0.0-M3</oap.deps.maven.enforcer.version>
         <oap.deps.maven.surefire.version>2.22.2</oap.deps.maven.surefire.version>
@@ -110,6 +110,7 @@
                     <execution>
                         <id>enforce</id>
                         <configuration>
+                            <fail>false</fail>
                             <rules>
                                 <banDuplicatePomDependencyVersions/>
                                 <requireUpperBoundDeps/>
