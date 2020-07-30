@@ -36,8 +36,6 @@
                     <compilerArgs>
                         <arg>-parameters</arg>
                         <arg>-Xlint:unchecked</arg>
-                        <arg>-Xlint:preview</arg>
-                        <arg>--enable-preview</arg>
                     </compilerArgs>
                 </configuration>
             </plugin>
@@ -54,7 +52,6 @@
                     <forkedProcessTimeoutInSeconds>4800</forkedProcessTimeoutInSeconds>
                     <useSystemClassLoader>false</useSystemClassLoader>
                     <runOrder>balanced</runOrder>
-                    <argLine>--enable-preview</argLine>
                     <includes>
                         <include>**/*Test.*</include>
                     </includes>
@@ -167,7 +164,6 @@
                             <forkMode>once</forkMode>
                             <useSystemClassLoader>false</useSystemClassLoader>
                             <runOrder>balanced</runOrder>
-                            <argLine>--enable-preview</argLine>
                             <includes>
                                 <include>**/*Performance.*</include>
                                 <include>**/*Perftest.*</include>
