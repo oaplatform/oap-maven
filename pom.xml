@@ -10,13 +10,13 @@
     <version>${oap.maven.project.version}</version>
 
     <properties>
-        <maven.compiler.source>14</maven.compiler.source>
-        <maven.compiler.target>14</maven.compiler.target>
+        <maven.compiler.source>15</maven.compiler.source>
+        <maven.compiler.target>15</maven.compiler.target>
         <encoding>UTF-8</encoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <oap.maven.project.version>1.1.0</oap.maven.project.version>
+        <oap.maven.project.version>2.0.0</oap.maven.project.version>
         <build.counter>1</build.counter>
         <oap.deps.maven.enforcer.version>3.0.0-M3</oap.deps.maven.enforcer.version>
         <oap.deps.maven.surefire.version>2.22.2</oap.deps.maven.surefire.version>
