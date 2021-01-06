@@ -10,13 +10,14 @@
     <version>${oap.maven.project.version}</version>
 
     <properties>
+        <oap.maven.project.version>2.0.1</oap.maven.project.version>
+
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
         <encoding>UTF-8</encoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <oap.maven.project.version>2.0.0</oap.maven.project.version>
         <build.counter>1</build.counter>
         <oap.deps.maven.enforcer.version>3.0.0-M3</oap.deps.maven.enforcer.version>
         <oap.deps.maven.surefire.version>2.22.2</oap.deps.maven.surefire.version>
@@ -121,27 +122,27 @@
                     </execution>
                 </executions>
             </plugin>
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-checkstyle-plugin</artifactId>-->
-<!--                <version>${oap.deps.maven.checkstyle.version}</version>-->
-<!--                <configuration>-->
-<!--                    <configLocation>https://raw.githubusercontent.com/oaplatform/oap-maven/master/.idea/checkstyle.xml</configLocation>-->
-<!--                    <encoding>UTF-8</encoding>-->
-<!--                    <consoleOutput>true</consoleOutput>-->
-<!--                    <failsOnError>true</failsOnError>-->
-<!--                    <linkXRef>false</linkXRef>-->
-<!--                </configuration>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <id>validate</id>-->
-<!--                        <phase>validate</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>check</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>${oap.deps.maven.checkstyle.version}</version>
+                <configuration>
+                    <configLocation>https://raw.githubusercontent.com/oaplatform/oap-maven/master/.idea/checkstyle.xml</configLocation>
+                    <encoding>UTF-8</encoding>
+                    <consoleOutput>true</consoleOutput>
+                    <failsOnError>true</failsOnError>
+                    <linkXRef>false</linkXRef>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>validate</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
