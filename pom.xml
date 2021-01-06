@@ -10,7 +10,7 @@
     <version>${oap.maven.project.version}</version>
 
     <properties>
-        <oap.maven.project.version>2.0.1</oap.maven.project.version>
+        <oap.maven.project.version>2.0.2</oap.maven.project.version>
 
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
@@ -22,6 +22,7 @@
         <oap.deps.maven.enforcer.version>3.0.0-M3</oap.deps.maven.enforcer.version>
         <oap.deps.maven.surefire.version>2.22.2</oap.deps.maven.surefire.version>
         <oap.deps.maven.checkstyle.version>3.1.1</oap.deps.maven.checkstyle.version>
+        <oap.deps.checkstyle.version>8.39</oap.deps.checkstyle.version>
         <oap.deps.maven.source.version>3.0.1</oap.deps.maven.source.version>
         <oap.deps.maven.flatten.version>1.1.0</oap.deps.maven.flatten.version>
     </properties>
@@ -58,7 +59,7 @@
                     </includes>
                     <excludes>
                         <exclude>**/*Performance.*</exclude>
-                        <exclude>**/*PerfTest.*</exclude>
+                        <exclude>**/*Perftest.*</exclude>
                     </excludes>
                 </configuration>
             </plugin>
@@ -142,6 +143,13 @@
                         </goals>
                     </execution>
                 </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.puppycrawl.tools</groupId>
+                        <artifactId>checkstyle</artifactId>
+                        <version>${oap.deps.checkstyle.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
