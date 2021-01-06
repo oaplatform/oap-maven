@@ -10,7 +10,7 @@
     <version>${oap.maven.project.version}</version>
 
     <properties>
-        <oap.maven.project.version>2.0.2</oap.maven.project.version>
+        <oap.maven.project.version>2.0.3</oap.maven.project.version>
 
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
