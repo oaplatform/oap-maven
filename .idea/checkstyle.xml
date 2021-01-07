@@ -134,7 +134,6 @@
         <module name="IllegalInstantiation"/>
         <!--<module name="InnerAssignment"/>-->
         <module name="ParameterAssignment"/>
-        <module name="MissingSwitchDefault"/>
         <module name="SimplifyBooleanExpression"/>
         <module name="SimplifyBooleanReturn"/>
         <module name="CovariantEquals"/>
