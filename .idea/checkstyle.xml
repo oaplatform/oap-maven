@@ -64,7 +64,7 @@
         <module name="ParameterName"/>
         <module name="TypeName"/>
         <module name="CatchParameterName"/>
-<!--        <module name="LambdaParameterName"/>-->
+        <module name="LambdaParameterName"/>
         <module name="AbstractClassName">
             <property name="ignoreModifier" value="true"/>
         </module>
