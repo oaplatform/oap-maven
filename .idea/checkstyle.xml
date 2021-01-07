@@ -138,7 +138,7 @@
         <module name="SimplifyBooleanExpression"/>
         <module name="SimplifyBooleanReturn"/>
         <module name="CovariantEquals"/>
-        <module name="DeclarationOrder"/>
+<!--        <module name="DeclarationOrder"/>-->
         <module name="DefaultComesLast"/>
         <module name="EmptyStatement"/>
         <module name="EqualsAvoidNull"/>
