@@ -161,6 +161,10 @@
         <module name="ModifiedControlVariable">
             <property name="skipEnhancedForLoopVariable" value="true"/>
         </module>
+        <module name="MatchXPath">
+            <property name="query" value="(//LITERAL_IF|//LITERAL_ELSE|//LITERAL_FOR|//LITERAL_WHILE)/SLIST[count(EXPR) = 1]"/>
+            <message key="matchxpath.match" value="Redundant braces around single statement"/>
+        </module>
 
 
         <!-- Checks for class design                         -->
