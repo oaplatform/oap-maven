@@ -10,7 +10,7 @@
     <version>${oap.maven.project.version}</version>
 
     <properties>
-        <oap.maven.project.version>2.0.4</oap.maven.project.version>
+        <oap.maven.project.version>2.0.5</oap.maven.project.version>
 
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
@@ -113,7 +113,7 @@
                             <rules>
                                 <banDuplicatePomDependencyVersions/>
                                 <requireUpperBoundDeps/>
-<!--                                <banTransitiveDependencies/>-->
+                                <!--                                <banTransitiveDependencies/>-->
                                 <dependencyConvergence/>
                             </rules>
                         </configuration>
@@ -128,12 +128,16 @@
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>${oap.deps.maven.checkstyle.version}</version>
                 <configuration>
-                    <configLocation>https://raw.githubusercontent.com/oaplatform/oap-maven/master/.idea/checkstyle.xml</configLocation>
+                    <configLocation>https://raw.githubusercontent.com/oaplatform/oap-maven/master/.idea/checkstyle.xml
+                    </configLocation>
                     <encoding>UTF-8</encoding>
                     <consoleOutput>true</consoleOutput>
                     <failsOnError>true</failsOnError>
                     <linkXRef>false</linkXRef>
-                    <excludes>**/*generated*/**/*</excludes>
+                    <sourceDirectories>
+                        <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+                        <sourceDirectory>${project.build.testSourceDirectory}</sourceDirectory>
+                    </sourceDirectories>
                 </configuration>
                 <executions>
                     <execution>

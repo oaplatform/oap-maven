@@ -1,0 +1,12 @@
+<xml>
+    <slist>
+        <if/>
+        <rcurly/>
+    </slist>
+    <slist>
+        <expr/>
+        <semi/>
+        <throw/>
+        <rcurly/>
+    </slist>
+</xml>
