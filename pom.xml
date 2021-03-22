@@ -10,10 +10,10 @@
     <version>${oap.maven.project.version}</version>
 
     <properties>
-        <oap.maven.project.version>2.0.6</oap.maven.project.version>
+        <oap.maven.project.version>2.0.5</oap.maven.project.version>
 
-        <maven.compiler.source>15</maven.compiler.source>
-        <maven.compiler.target>15</maven.compiler.target>
+        <maven.compiler.source>16</maven.compiler.source>
+        <maven.compiler.target>16</maven.compiler.target>
         <encoding>UTF-8</encoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -36,7 +36,8 @@
                 <configuration>
                     <useIncrementalCompilation>true</useIncrementalCompilation>
                     <fork>true</fork>
-                    <compilerArgs>--enable-preview
+                    <compilerArgs>
+                        <arg>-parameters</arg>
                         <arg>-Xlint:unchecked</arg>
                         <!-- remove once lombok fix will be release -->
                         <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED</arg>
@@ -50,8 +51,6 @@
                         <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
                         <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.jvm=ALL-UNNAMED</arg>
                     </compilerArgs>
-                    <source>15</source>
-                    <target>15</target>
                 </configuration>
             </plugin>
             <plugin>
