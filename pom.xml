@@ -10,7 +10,7 @@
     <version>${oap.maven.project.version}</version>
 
     <properties>
-        <oap.maven.project.version>2.0.7</oap.maven.project.version>
+        <oap.maven.project.version>2.0.8</oap.maven.project.version>
 
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
@@ -19,7 +19,6 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <build.counter>1</build.counter>
-        <oap.deps.maven.enforcer.version>3.0.0-M3</oap.deps.maven.enforcer.version>
         <oap.deps.maven.surefire.version>2.22.2</oap.deps.maven.surefire.version>
         <oap.deps.maven.checkstyle.version>3.1.1</oap.deps.maven.checkstyle.version>
         <oap.deps.checkstyle.version>8.39</oap.deps.checkstyle.version>
@@ -97,28 +96,6 @@
                         <phase>clean</phase>
                         <goals>
                             <goal>clean</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-enforcer-plugin</artifactId>
-                <version>${oap.deps.maven.enforcer.version}</version>
-                <executions>
-                    <execution>
-                        <id>enforce</id>
-                        <configuration>
-                            <fail>false</fail>
-                            <rules>
-                                <banDuplicatePomDependencyVersions/>
-                                <requireUpperBoundDeps/>
-                                <!--                                <banTransitiveDependencies/>-->
-                                <dependencyConvergence/>
-                            </rules>
-                        </configuration>
-                        <goals>
-                            <goal>enforce</goal>
                         </goals>
                     </execution>
                 </executions>
