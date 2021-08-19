@@ -10,7 +10,7 @@
     <version>${oap.maven.project.version}</version>
 
     <properties>
-        <oap.maven.project.version>2.0.8</oap.maven.project.version>
+        <oap.maven.project.version>3.0.0</oap.maven.project.version>
 
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
@@ -19,11 +19,12 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <build.counter>1</build.counter>
-        <oap.deps.maven.surefire.version>2.22.2</oap.deps.maven.surefire.version>
-        <oap.deps.maven.checkstyle.version>3.1.1</oap.deps.maven.checkstyle.version>
-        <oap.deps.checkstyle.version>8.39</oap.deps.checkstyle.version>
-        <oap.deps.maven.source.version>3.0.1</oap.deps.maven.source.version>
-        <oap.deps.maven.flatten.version>1.1.0</oap.deps.maven.flatten.version>
+        <oap.deps.maven.surefire.version>3.0.0-M5</oap.deps.maven.surefire.version>
+        <forkCount>2</forkCount>
+        <oap.deps.maven.checkstyle.version>3.1.2</oap.deps.maven.checkstyle.version>
+        <oap.deps.checkstyle.version>8.45.1</oap.deps.checkstyle.version>
+        <oap.deps.maven.source.version>3.2.0</oap.deps.maven.source.version>
+        <oap.deps.maven.flatten.version>1.2.2</oap.deps.maven.flatten.version>
     </properties>
 
     <build>
@@ -45,6 +46,8 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${oap.deps.maven.surefire.version}</version>
                 <configuration>
+                    <forkCount>${forkCount}</forkCount>
+                    <reuseForks>true</reuseForks>
                     <trimStackTrace>false</trimStackTrace>
                     <testFailureIgnore>true</testFailureIgnore>
                     <useFile>true</useFile>
@@ -64,8 +67,8 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <version>${oap.deps.maven.source.version}</version>
                 <artifactId>maven-source-plugin</artifactId>
+                <version>${oap.deps.maven.source.version}</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
