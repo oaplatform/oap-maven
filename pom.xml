@@ -20,7 +20,7 @@
 
         <build.counter>1</build.counter>
         <oap.deps.maven.surefire.version>3.0.0-M5</oap.deps.maven.surefire.version>
-        <forkCount>2</forkCount>
+        <oap.deps.maven.surefire.forkCount>2</oap.deps.maven.surefire.forkCount>
         <oap.deps.maven.checkstyle.version>3.1.2</oap.deps.maven.checkstyle.version>
         <oap.deps.checkstyle.version>8.45.1</oap.deps.checkstyle.version>
         <oap.deps.maven.source.version>3.2.0</oap.deps.maven.source.version>
