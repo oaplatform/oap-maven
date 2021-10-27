@@ -10,7 +10,7 @@
     <version>${oap.maven.project.version}</version>
 
     <properties>
-        <oap.maven.project.version>17.3.0.4</oap.maven.project.version>
+        <oap.maven.project.version>17.3.0.5</oap.maven.project.version>
 
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
@@ -151,7 +151,19 @@
                         <artifactId>maven-surefire-plugin</artifactId>
                         <version>${oap.deps.maven.surefire.version}</version>
                         <configuration>
-                            <argLine>-XX:ActiveProcessorCount=${oap.deps.maven.surefire.docker_cpu} -ea --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.math=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.text=ALL-UNNAMED --add-opens=java.sql/java.sql=ALL-UNNAMED --add-opens=java.util.concurrent.atomic/java.util.concurrent.atomic=ALL-UNNAMED</argLine>
+                            <argLine>
+                                -XX:ActiveProcessorCount=${oap.deps.maven.surefire.docker_cpu}
+                                -ea
+                                --add-opens=java.base/java.lang=ALL-UNNAMED
+                                --add-opens=java.base/java.math=ALL-UNNAMED
+                                --add-opens=java.base/java.util=ALL-UNNAMED
+                                --add-opens=java.base/java.util.stream=ALL-UNNAMED
+                                --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+                                --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED
+                                --add-opens=java.base/java.net=ALL-UNNAMED
+                                --add-opens=java.base/java.text=ALL-UNNAMED
+                                --add-opens=java.sql/java.sql=ALL-UNNAMED
+                                --add-opens=java.util.concurrent.atomic/java.util.concurrent.atomic=ALL-UNNAMED</argLine>
                             <trimStackTrace>false</trimStackTrace>
                             <testFailureIgnore>true</testFailureIgnore>
                             <useFile>true</useFile>
