@@ -14,7 +14,7 @@
     </organization>
 
     <properties>
-        <oap.maven.project.version>17.3.6.0</oap.maven.project.version>
+        <oap.maven.project.version>17.3.6.1</oap.maven.project.version>
 
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
@@ -32,6 +32,8 @@
         <oap.deps.maven.flatten.version>1.2.2</oap.deps.maven.flatten.version>
         <oap.deps.maven.jar.version>3.2.2</oap.deps.maven.jar.version>
         <oap.deps.maven.compiler.version>3.8.0</oap.deps.maven.compiler.version>
+        <oap.deps.maven.enforcer.version>3.1.0</oap.deps.maven.enforcer.version>
+        <min.maven.version>3.6.3</min.maven.version>
     </properties>
 
     <build>
@@ -170,6 +172,29 @@
                         <version>${oap.deps.checkstyle.version}</version>
                     </dependency>
                 </dependencies>
+            </plugin>
+            <plugin>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>validate_java_and_maven_version</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <inherited>false</inherited>
+                        <configuration>
+                            <rules>
+                                <requireMavenVersion>
+                                    <version>[${min.maven.version},4)</version>
+                                </requireMavenVersion>
+                                <requireJavaVersion>
+                                    <version>[${maven.compiler.source},18)</version>
+                                </requireJavaVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
