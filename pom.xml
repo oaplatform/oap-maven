@@ -10,19 +10,22 @@
     <version>${oap.maven.project.version}</version>
 
     <properties>
-        <oap.maven.project.version>2.0.8</oap.maven.project.version>
+        <oap.maven.project.version>17.3.0.9</oap.maven.project.version>
 
-        <maven.compiler.source>15</maven.compiler.source>
-        <maven.compiler.target>15</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <encoding>UTF-8</encoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <oap.deps.maven.surefire.version>2.22.2</oap.deps.maven.surefire.version>
-        <oap.deps.maven.checkstyle.version>3.1.1</oap.deps.maven.checkstyle.version>
-        <oap.deps.checkstyle.version>8.39</oap.deps.checkstyle.version>
-        <oap.deps.maven.source.version>3.0.1</oap.deps.maven.source.version>
-        <oap.deps.maven.flatten.version>1.1.0</oap.deps.maven.flatten.version>
+        <build.counter>1</build.counter>
+        <oap.deps.maven.surefire.version>3.0.0-M5</oap.deps.maven.surefire.version>
+        <oap.deps.maven.surefire.forkCount>1</oap.deps.maven.surefire.forkCount>
+        <oap.deps.maven.surefire.docker_cpu>4</oap.deps.maven.surefire.docker_cpu>
+        <oap.deps.maven.checkstyle.version>3.1.2</oap.deps.maven.checkstyle.version>
+        <oap.deps.checkstyle.version>8.45.1</oap.deps.checkstyle.version>
+        <oap.deps.maven.source.version>3.2.0</oap.deps.maven.source.version>
+        <oap.deps.maven.flatten.version>1.2.2</oap.deps.maven.flatten.version>
     </properties>
 
     <build>
@@ -44,6 +47,23 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${oap.deps.maven.surefire.version}</version>
                 <configuration>
+                    <argLine>
+                        -XX:ActiveProcessorCount=${oap.deps.maven.surefire.docker_cpu}
+                        -ea
+                        --add-opens=java.base/java.lang=ALL-UNNAMED
+                        --add-opens=java.base/java.math=ALL-UNNAMED
+                        --add-opens=java.base/java.util=ALL-UNNAMED
+                        --add-opens=java.base/java.util.stream=ALL-UNNAMED
+                        --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+                        --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED
+                        --add-opens=java.base/java.net=ALL-UNNAMED
+                        --add-opens=java.base/java.text=ALL-UNNAMED
+                        --add-opens=java.sql/java.sql=ALL-UNNAMED
+                    </argLine>
+                    <forkCount>${oap.deps.maven.surefire.forkCount}</forkCount>
+                    <!-- Activate the use of TCP to transmit events to the plugin -->
+                    <forkNode implementation="org.apache.maven.plugin.surefire.extensions.SurefireForkNodeFactory"/>
+                    <reuseForks>true</reuseForks>
                     <trimStackTrace>false</trimStackTrace>
                     <testFailureIgnore>true</testFailureIgnore>
                     <useFile>true</useFile>
@@ -63,8 +83,8 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <version>${oap.deps.maven.source.version}</version>
                 <artifactId>maven-source-plugin</artifactId>
+                <version>${oap.deps.maven.source.version}</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -144,6 +164,19 @@
                         <artifactId>maven-surefire-plugin</artifactId>
                         <version>${oap.deps.maven.surefire.version}</version>
                         <configuration>
+                            <argLine>
+                                -XX:ActiveProcessorCount=${oap.deps.maven.surefire.docker_cpu}
+                                -ea
+                                --add-opens=java.base/java.lang=ALL-UNNAMED
+                                --add-opens=java.base/java.math=ALL-UNNAMED
+                                --add-opens=java.base/java.util=ALL-UNNAMED
+                                --add-opens=java.base/java.util.stream=ALL-UNNAMED
+                                --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+                                --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED
+                                --add-opens=java.base/java.net=ALL-UNNAMED
+                                --add-opens=java.base/java.text=ALL-UNNAMED
+                                --add-opens=java.sql/java.sql=ALL-UNNAMED
+                            </argLine>
                             <trimStackTrace>false</trimStackTrace>
                             <testFailureIgnore>true</testFailureIgnore>
                             <useFile>true</useFile>
