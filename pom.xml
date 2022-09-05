@@ -26,7 +26,7 @@
         <oap.deps.maven.surefire.version>3.0.0-M5</oap.deps.maven.surefire.version>
         <oap.deps.maven.surefire.forkCount>1</oap.deps.maven.surefire.forkCount>
         <oap.deps.maven.surefire.docker_cpu>4</oap.deps.maven.surefire.docker_cpu>
-        <oap.deps.maven.checkstyle.version>3.1.2</oap.deps.maven.checkstyle.version>
+        <oap.deps.maven.checkstyle.version>3.2.0</oap.deps.maven.checkstyle.version>
         <oap.deps.checkstyle.version>8.45.1</oap.deps.checkstyle.version>
         <oap.deps.maven.source.version>3.2.0</oap.deps.maven.source.version>
         <oap.deps.maven.flatten.version>1.2.2</oap.deps.maven.flatten.version>
