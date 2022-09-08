@@ -14,7 +14,7 @@
     </organization>
 
     <properties>
-        <oap.maven.project.version>17.3.2.0</oap.maven.project.version>
+        <oap.maven.project.version>17.3.3.0</oap.maven.project.version>
 
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
@@ -30,6 +30,8 @@
         <oap.deps.checkstyle.version>8.45.1</oap.deps.checkstyle.version>
         <oap.deps.maven.source.version>3.2.0</oap.deps.maven.source.version>
         <oap.deps.maven.flatten.version>1.2.2</oap.deps.maven.flatten.version>
+        <oap.deps.maven.jar.version>3.2.2</oap.deps.maven.jar.version>
+        <oap.deps.maven.compiler.version>3.8.0</oap.deps.maven.compiler.version>
     </properties>
 
     <build>
@@ -37,7 +39,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
+                <version>${oap.deps.maven.compiler.version}</version>
                 <configuration>
                     <useIncrementalCompilation>true</useIncrementalCompilation>
                     <compilerArgs>
@@ -49,6 +51,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
+                <version>${oap.deps.maven.jar.version}</version>
                 <configuration>
                     <archive>
                         <manifest>
@@ -92,7 +95,7 @@
                     </includes>
                     <excludes>
                         <exclude>**/*Performance.*</exclude>
-                        <exclude>**/*Perftest.*</exclude>
+                        <exclude>**/*Perf.*</exclude>
                     </excludes>
                 </configuration>
             </plugin>
@@ -203,7 +206,7 @@
                             <runOrder>balanced</runOrder>
                             <includes>
                                 <include>**/*Performance.*</include>
-                                <include>**/*Perftest.*</include>
+                                <include>**/*Perf.*</include>
                             </includes>
                         </configuration>
                     </plugin>
