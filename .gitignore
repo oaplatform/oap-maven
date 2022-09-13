@@ -10,6 +10,7 @@
 /.idea/jarRepositories.xml
 /.idea/workspace.xml
 /.idea/shelf
+/.idea/runConfigurations.xml
 
 target
 .surefire*
