@@ -190,7 +190,7 @@
                                     <version>[${min.maven.version},4)</version>
                                 </requireMavenVersion>
                                 <requireJavaVersion>
-                                    <version>[${maven.compiler.source},18)</version>
+                                    <version>[${maven.compiler.source},19)</version>
                                 </requireJavaVersion>
                             </rules>
                         </configuration>
