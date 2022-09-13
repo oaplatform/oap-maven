@@ -175,6 +175,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-enforcer-plugin</artifactId>
+                <version>${oap.deps.maven.enforcer.version}</version>
                 <executions>
                     <execution>
                         <id>validate_java_and_maven_version</id>
