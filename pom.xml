@@ -31,7 +31,7 @@
         <oap.deps.maven.source.version>3.2.1</oap.deps.maven.source.version>
         <oap.deps.maven.flatten.version>1.2.2</oap.deps.maven.flatten.version>
         <oap.deps.maven.jar.version>3.2.2</oap.deps.maven.jar.version>
-        <oap.deps.maven.compiler.version>3.8.0</oap.deps.maven.compiler.version>
+        <oap.deps.maven.compiler.version>3.10.1</oap.deps.maven.compiler.version>
         <oap.deps.maven.enforcer.version>3.1.0</oap.deps.maven.enforcer.version>
         <min.maven.version>3.6.3</min.maven.version>
     </properties>
