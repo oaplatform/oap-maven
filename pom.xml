@@ -14,10 +14,9 @@
     </organization>
 
     <properties>
-        <oap.maven.project.version>18.3.7.0</oap.maven.project.version>
+        <oap.maven.project.version>18.3.7.1</oap.maven.project.version>
 
-        <maven.compiler.source>18</maven.compiler.source>
-        <maven.compiler.target>18</maven.compiler.target>
+        <maven.compiler.release>18</maven.compiler.release>
         <encoding>UTF-8</encoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -190,7 +189,7 @@
                                     <version>[${min.maven.version},4)</version>
                                 </requireMavenVersion>
                                 <requireJavaVersion>
-                                    <version>[${maven.compiler.source},19)</version>
+                                    <version>[${maven.compiler.release},19)</version>
                                 </requireJavaVersion>
                             </rules>
                         </configuration>
@@ -240,6 +239,15 @@
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+        <profile>
+          <id>java-17</id>
+          <activation>
+            <jdk>(,18)</jdk>
+          </activation>
+          <properties>
+            <maven.compiler.release>17</maven.compiler.release>
+          </properties>
         </profile>
     </profiles>
 </project>
