@@ -14,7 +14,7 @@
     </organization>
 
     <properties>
-        <oap.maven.project.version>18.3.7.1</oap.maven.project.version>
+        <oap.maven.project.version>18.3.7.2</oap.maven.project.version>
 
         <maven.compiler.release>18</maven.compiler.release>
         <encoding>UTF-8</encoding>
