@@ -24,7 +24,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <build.counter>1</build.counter>
-        <oap.deps.maven.surefire.version>3.0.0-M7</oap.deps.maven.surefire.version>
+        <oap.deps.maven.surefire.version>3.0.0-M8</oap.deps.maven.surefire.version>
         <oap.deps.maven.surefire.forkCount>1</oap.deps.maven.surefire.forkCount>
         <oap.deps.maven.surefire.docker_cpu>4</oap.deps.maven.surefire.docker_cpu>
         <oap.deps.maven.checkstyle.version>3.2.0</oap.deps.maven.checkstyle.version>
