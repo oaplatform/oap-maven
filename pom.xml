@@ -16,9 +16,9 @@
     </organization>
 
     <properties>
-        <oap.maven.project.version>18.3.7.5</oap.maven.project.version>
+        <oap.maven.project.version>21.0.0</oap.maven.project.version>
 
-        <maven.compiler.release>18</maven.compiler.release>
+        <maven.compiler.release>21</maven.compiler.release>
         <encoding>UTF-8</encoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -26,7 +26,6 @@
         <build.counter>1</build.counter>
         <oap.deps.maven.surefire.version>3.0.0-M7</oap.deps.maven.surefire.version>
         <oap.deps.maven.surefire.forkCount>1</oap.deps.maven.surefire.forkCount>
-        <oap.deps.maven.surefire.docker_cpu>4</oap.deps.maven.surefire.docker_cpu>
         <oap.deps.maven.checkstyle.version>3.2.0</oap.deps.maven.checkstyle.version>
         <oap.deps.checkstyle.version>10.3.3</oap.deps.checkstyle.version>
         <oap.deps.maven.source.version>3.2.1</oap.deps.maven.source.version>
@@ -71,7 +70,6 @@
                 <version>${oap.deps.maven.surefire.version}</version>
                 <configuration>
                     <argLine>
-                        -XX:ActiveProcessorCount=${oap.deps.maven.surefire.docker_cpu}
                         -ea
                         --add-opens=java.base/java.lang=ALL-UNNAMED
                         --add-opens=java.base/java.math=ALL-UNNAMED
@@ -193,7 +191,7 @@
                                     <version>[${min.maven.version},4)</version>
                                 </requireMavenVersion>
                                 <requireJavaVersion>
-                                    <version>[${maven.compiler.release},19)</version>
+                                    <version>${maven.compiler.release}</version>
                                 </requireJavaVersion>
                             </rules>
                         </configuration>
@@ -214,7 +212,6 @@
                         <version>${oap.deps.maven.surefire.version}</version>
                         <configuration>
                             <argLine>
-                                -XX:ActiveProcessorCount=${oap.deps.maven.surefire.docker_cpu}
                                 -ea
                                 --add-opens=java.base/java.lang=ALL-UNNAMED
                                 --add-opens=java.base/java.math=ALL-UNNAMED
