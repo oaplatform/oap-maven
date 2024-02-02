@@ -16,7 +16,7 @@
     </organization>
 
     <properties>
-        <oap.project.version>21.1.3</oap.project.version>
+        <oap.project.version>21.1.4</oap.project.version>
 
         <maven.compiler.release>21</maven.compiler.release>
         <encoding>UTF-8</encoding>
@@ -94,21 +94,6 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${oap.deps.maven.surefire.version}</version>
                 <configuration>
-                    <properties>
-                        <property>
-                            <name>junit</name>
-                            <value>false</value>
-                        </property>
-                        <property>
-                            <name>usedefaultlisteners</name>
-                            <value>false</value> <!-- disabling default listeners is optional -->
-                        </property>
-                        <property>
-                            <name>listener</name>
-                            <value>oap.teamcity.testng.TeamcityTestNGListener</value>
-                        </property>
-                    </properties>
-
                     <argLine>
                         -ea
                         --add-opens=java.base/java.lang=ALL-UNNAMED
