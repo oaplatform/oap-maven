@@ -9,14 +9,14 @@
     <groupId>oap</groupId>
     <artifactId>oap.maven</artifactId>
 
-    <version>${oap.maven.project.version}</version>
+    <version>${oap.project.version}</version>
     <organization>
         <name>Open Application Platform</name>
         <url>http://oaplatform.org</url>
     </organization>
 
     <properties>
-        <oap.maven.project.version>21.1.0</oap.maven.project.version>
+        <oap.project.version>21.1.0</oap.project.version>
 
         <maven.compiler.release>21</maven.compiler.release>
         <encoding>UTF-8</encoding>

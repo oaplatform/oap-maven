@@ -5,7 +5,7 @@ The parent Maven OAP project. All Maven OAP projects should use it in the follow
     <parent>
         <groupId>oap</groupId>
         <artifactId>oap.maven</artifactId>
-        <version>${oap.maven.project.version}</version>
+        <version>${oap.project.version}</version>
     </parent>
 ```
 Currently it handles `maven-compiler-plugin`, `maven-surefire-plugin`, `maven-source-plugin`, `flatten-maven-plugin`, 
