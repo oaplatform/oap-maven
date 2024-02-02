@@ -16,12 +16,14 @@
     </organization>
 
     <properties>
-        <oap.maven.project.version>21.0.0</oap.maven.project.version>
+        <oap.maven.project.version>21.1.0</oap.maven.project.version>
 
         <maven.compiler.release>21</maven.compiler.release>
         <encoding>UTF-8</encoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <oap.deps.oap-teamcity.version>21.0.1</oap.deps.oap-teamcity.version>
 
         <build.counter>1</build.counter>
         <oap.deps.maven.surefire.version>3.0.0-M7</oap.deps.maven.surefire.version>
@@ -35,6 +37,15 @@
         <oap.deps.maven.enforcer.version>3.1.0</oap.deps.maven.enforcer.version>
         <min.maven.version>3.6.3</min.maven.version>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>oap</groupId>
+            <artifactId>oap-teamcity-testng</artifactId>
+            <version>${oap.deps.oap-teamcity.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
@@ -69,6 +80,21 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${oap.deps.maven.surefire.version}</version>
                 <configuration>
+                    <properties>
+                        <property>
+                            <name>junit</name>
+                            <value>false</value>
+                        </property>
+                        <property>
+                            <name>usedefaultlisteners</name>
+                            <value>false</value> <!-- disabling default listeners is optional -->
+                        </property>
+                        <property>
+                            <name>listener</name>
+                            <value>oap.teamcity.testng.TeamcityTestNGListener</value>
+                        </property>
+                    </properties>
+
                     <argLine>
                         -ea
                         --add-opens=java.base/java.lang=ALL-UNNAMED
@@ -93,7 +119,7 @@
                     <disableXmlReport>false</disableXmlReport>
                     <printSummary>true</printSummary>
                     <forkedProcessTimeoutInSeconds>4800</forkedProcessTimeoutInSeconds>
-                    <useSystemClassLoader>false</useSystemClassLoader>
+                    <useSystemClassLoader>true</useSystemClassLoader>
                     <runOrder>balanced</runOrder>
                     <includes>
                         <include>**/*Test.*</include>
