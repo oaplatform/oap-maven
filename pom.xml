@@ -15,6 +15,10 @@
         <url>http://oaplatform.org</url>
     </organization>
 
+    <modules>
+        <module>oap-dependencies</module>
+    </modules>
+
     <properties>
         <oap.project.version>21.1.4</oap.project.version>
 
