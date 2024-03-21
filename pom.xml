@@ -56,15 +56,6 @@
         </pluginRepository>
     </pluginRepositories>
 
-    <dependencies>
-        <dependency>
-            <groupId>oap</groupId>
-            <artifactId>oap-teamcity-testng</artifactId>
-            <version>${oap.deps.oap-teamcity.version}</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-
     <build>
         <plugins>
             <plugin>
