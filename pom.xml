@@ -42,6 +42,13 @@
         <min.maven.version>3.6.3</min.maven.version>
     </properties>
 
+    <distributionManagement>
+        <repository>
+            <id>oap</id>
+            <url>https://artifacts.oaplatform.org/repository/oap-maven/</url>
+        </repository>
+    </distributionManagement>
+
     <repositories>
         <repository>
             <id>oap</id>
