@@ -6,6 +6,10 @@
 
     <packaging>pom</packaging>
 
+    <prerequisites>
+        <maven>3.6.3</maven>
+    </prerequisites>
+
     <groupId>oap</groupId>
     <artifactId>oap.maven</artifactId>
 
@@ -20,24 +24,24 @@
     </modules>
 
     <properties>
-        <oap.project.version>21.1.14</oap.project.version>
+        <oap.project.version>22.0.0</oap.project.version>
 
-        <maven.compiler.release>21</maven.compiler.release>
+        <maven.compiler.release>22</maven.compiler.release>
         <encoding>UTF-8</encoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <oap.deps.oap-teamcity.version>21.0.1</oap.deps.oap-teamcity.version>
+        <oap.deps.oap-teamcity.version>22.0.0</oap.deps.oap-teamcity.version>
 
         <build.counter>1</build.counter>
         <oap.deps.maven.surefire.version>3.2.5</oap.deps.maven.surefire.version>
         <oap.deps.maven.surefire.forkCount>1</oap.deps.maven.surefire.forkCount>
         <oap.deps.maven.checkstyle.version>3.3.1</oap.deps.maven.checkstyle.version>
         <oap.deps.checkstyle.version>10.13.0</oap.deps.checkstyle.version>
-        <oap.deps.maven.source.version>3.3.0</oap.deps.maven.source.version>
+        <oap.deps.maven.source.version>3.3.1</oap.deps.maven.source.version>
         <oap.deps.maven.flatten.version>1.6.0</oap.deps.maven.flatten.version>
         <oap.deps.maven.jar.version>3.3.0</oap.deps.maven.jar.version>
-        <oap.deps.maven.compiler.version>3.12.1</oap.deps.maven.compiler.version>
+        <oap.deps.maven.compiler.version>3.13.0</oap.deps.maven.compiler.version>
         <oap.deps.maven.enforcer.version>3.4.1</oap.deps.maven.enforcer.version>
         <min.maven.version>3.6.3</min.maven.version>
     </properties>
