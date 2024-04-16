@@ -24,7 +24,7 @@
     </modules>
 
     <properties>
-        <oap.project.version>22.0.0</oap.project.version>
+        <oap.project.version>22.0.1</oap.project.version>
 
         <maven.compiler.release>22</maven.compiler.release>
         <encoding>UTF-8</encoding>
