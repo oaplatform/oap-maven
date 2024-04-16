@@ -64,7 +64,9 @@
         <module name="ParameterName"/>
         <module name="TypeName"/>
         <module name="CatchParameterName"/>
-        <module name="LambdaParameterName"/>
+        <module name="LambdaParameterName">
+            <property name="format">'^([a-z][a-zA-Z0-9]*)|(_)$</property>
+        </module>
         <module name="AbstractClassName">
             <property name="ignoreModifier" value="true"/>
         </module>
