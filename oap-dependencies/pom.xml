@@ -84,7 +84,7 @@
             <dependency>
                 <groupId>joda-time</groupId>
                 <artifactId>joda-time</artifactId>
-                <version>2.12.7</version>
+                <version>2.13.0</version>
             </dependency>
 
             <dependency>
@@ -118,7 +118,7 @@
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
-                <version>33.3.0-jre</version>
+                <version>33.4.0-jre</version>
             </dependency>
 
             <dependency>
@@ -129,7 +129,7 @@
             <dependency>
                 <groupId>org.assertj</groupId>
                 <artifactId>assertj-core</artifactId>
-                <version>3.26.3</version>
+                <version>3.27.3</version>
                 <exclusions>
                     <exclusion>
                         <groupId>net.bytebuddy</groupId>
@@ -141,17 +141,17 @@
             <dependency>
                 <groupId>io.micrometer</groupId>
                 <artifactId>micrometer-core</artifactId>
-                <version>1.13.4</version>
+                <version>1.14.3</version>
             </dependency>
             <dependency>
                 <groupId>io.micrometer</groupId>
                 <artifactId>micrometer-registry-prometheus</artifactId>
-                <version>1.13.4</version>
+                <version>1.14.3</version>
             </dependency>
             <dependency>
                 <groupId>io.micrometer</groupId>
                 <artifactId>micrometer-registry-prometheus-simpleclient</artifactId>
-                <version>1.13.4</version>
+                <version>1.14.3</version>
             </dependency>
 
             <dependency>
@@ -180,20 +180,20 @@
                 <version>2.30.6</version>
             </dependency>
             <dependency>
-                <groupId>software.amazon.awssdk.crt</groupId>
-                <artifactId>aws-crt</artifactId>
-                <version>2.30.6</version>
-            </dependency>
-            <dependency>
                 <groupId>software.amazon.awssdk</groupId>
                 <artifactId>route53</artifactId>
                 <version>2.30.6</version>
+            </dependency>
+            <dependency>
+                <groupId>software.amazon.awssdk.crt</groupId>
+                <artifactId>aws-crt</artifactId>
+                <version>0.33.11</version>
             </dependency>
 
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-                <version>1.18.34</version>
+                <version>1.18.36</version>
                 <scope>provided</scope>
             </dependency>
         </dependencies>
