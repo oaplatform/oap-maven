@@ -24,7 +24,7 @@
     </modules>
 
     <properties>
-        <oap.project.version>22.0.9</oap.project.version>
+        <oap.project.version>22.0.10</oap.project.version>
 
         <maven.compiler.release>22</maven.compiler.release>
         <encoding>UTF-8</encoding>
@@ -232,4 +232,31 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>exists-maven-plugin</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.honton.chas</groupId>
+                        <artifactId>exists-maven-plugin</artifactId>
+                        <version>0.14.0</version>
+                        <configuration>
+                            <requireGoal>deploy</requireGoal>
+                            <repository>${mvn.repository}</repository>
+                            <serverId>${mvn.serverId}</serverId>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>remote</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
