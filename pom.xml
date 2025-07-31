@@ -24,7 +24,7 @@
     </modules>
 
     <properties>
-        <oap.project.version>22.0.10</oap.project.version>
+        <oap.project.version>22.1.0</oap.project.version>
 
         <maven.compiler.release>22</maven.compiler.release>
         <encoding>UTF-8</encoding>
@@ -36,8 +36,8 @@
         <build.counter>1</build.counter>
         <oap.deps.maven.surefire.version>3.5.0</oap.deps.maven.surefire.version>
         <oap.deps.maven.surefire.forkCount>1</oap.deps.maven.surefire.forkCount>
-        <oap.deps.maven.checkstyle.version>3.5.0</oap.deps.maven.checkstyle.version>
-        <oap.deps.checkstyle.version>10.13.0</oap.deps.checkstyle.version>
+        <oap.deps.maven.checkstyle.version>3.6.0</oap.deps.maven.checkstyle.version>
+        <oap.deps.checkstyle.version>10.22.0</oap.deps.checkstyle.version>
         <oap.deps.maven.source.version>3.3.1</oap.deps.maven.source.version>
         <oap.deps.maven.flatten.version>1.6.0</oap.deps.maven.flatten.version>
         <oap.deps.maven.jar.version>3.4.2</oap.deps.maven.jar.version>
