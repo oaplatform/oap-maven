@@ -24,7 +24,7 @@
     </modules>
 
     <properties>
-        <oap.project.version>22.1.0</oap.project.version>
+        <oap.project.version>22.1.1</oap.project.version>
 
         <maven.compiler.release>22</maven.compiler.release>
         <encoding>UTF-8</encoding>
@@ -112,6 +112,7 @@
                         --add-opens=java.base/java.text=ALL-UNNAMED
                         --add-opens=java.base/java.io=ALL-UNNAMED
                         --add-opens=java.base/java.nio=ALL-UNNAMED
+                        --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED
                         --add-opens=java.sql/java.sql=ALL-UNNAMED
                     </argLine>
                     <forkCount>${oap.deps.maven.surefire.forkCount}</forkCount>
