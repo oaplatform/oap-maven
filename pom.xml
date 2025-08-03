@@ -81,6 +81,7 @@
                         <arg>-Xlint:unchecked</arg>
                         <arg>--add-modules</arg>
                         <arg>java.xml,java.compiler</arg>
+                        <arg>-proc:full</arg>
                     </compilerArgs>
                 </configuration>
             </plugin>
