@@ -24,7 +24,7 @@
     </modules>
 
     <properties>
-        <oap.project.version>24.0.0</oap.project.version>
+        <oap.project.version>24.0.1</oap.project.version>
 
         <maven.compiler.release>24</maven.compiler.release>
         <encoding>UTF-8</encoding>
@@ -81,6 +81,7 @@
                         <arg>-Xlint:unchecked</arg>
                         <arg>--add-modules</arg>
                         <arg>java.xml,java.compiler</arg>
+                        <arg>-proc:full</arg>
                     </compilerArgs>
                 </configuration>
             </plugin>
