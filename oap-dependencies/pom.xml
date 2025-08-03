@@ -189,6 +189,11 @@
                 <artifactId>aws-crt</artifactId>
                 <version>0.38.8</version>
             </dependency>
+            <dependency>
+                <groupId>org.ow2.asm</groupId>
+                <artifactId>asm</artifactId>
+                <version>9.8</version>
+            </dependency>
 
             <dependency>
                 <groupId>org.projectlombok</groupId>
