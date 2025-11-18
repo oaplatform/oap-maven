@@ -24,14 +24,14 @@
     </modules>
 
     <properties>
-        <oap.project.version>24.0.2</oap.project.version>
+        <oap.project.version>25.0.0</oap.project.version>
 
-        <maven.compiler.release>24</maven.compiler.release>
+        <maven.compiler.release>25</maven.compiler.release>
         <encoding>UTF-8</encoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <oap.deps.oap-teamcity.version>24.0.0</oap.deps.oap-teamcity.version>
+        <oap.deps.oap-teamcity.version>25.0.0</oap.deps.oap-teamcity.version>
 
         <build.counter>1</build.counter>
         <oap.deps.maven.surefire.version>3.5.3</oap.deps.maven.surefire.version>
