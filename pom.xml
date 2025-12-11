@@ -24,7 +24,7 @@
     </modules>
 
     <properties>
-        <oap.project.version>25.0.0</oap.project.version>
+        <oap.project.version>25.0.1</oap.project.version>
 
         <maven.compiler.release>25</maven.compiler.release>
         <encoding>UTF-8</encoding>
@@ -49,21 +49,21 @@
     <distributionManagement>
         <repository>
             <id>oap</id>
-            <url>https://artifacts.oaplatform.org/repository/oap-maven/</url>
+            <url>https://oap.xenoss.net/repository/oap-maven/</url>
         </repository>
     </distributionManagement>
 
     <repositories>
         <repository>
             <id>oap</id>
-            <url>https://artifacts.oaplatform.org/repository/oap-maven/</url>
+            <url>https://oap.xenoss.net/repository/oap-maven/</url>
         </repository>
     </repositories>
 
     <pluginRepositories>
         <pluginRepository>
             <id>oap</id>
-            <url>https://artifacts.oaplatform.org/repository/oap-maven/</url>
+            <url>https://oap.xenoss.net/repository/oap-maven/</url>
         </pluginRepository>
     </pluginRepositories>
 
