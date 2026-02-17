@@ -83,14 +83,13 @@
                     <failsOnError>true</failsOnError>
                     <linkXRef>false</linkXRef>
                     <sourceDirectories>
-                        <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
-                        <sourceDirectory>${project.build.testSourceDirectory}</sourceDirectory>
+                        <sourceDirectory>${project.build.directory}/manifold</sourceDirectory>
                     </sourceDirectories>
                 </configuration>
                 <executions>
                     <execution>
                         <id>validate</id>
-                        <phase>validate</phase>
+                        <phase>process-classes</phase>
                         <goals>
                             <goal>check</goal>
                         </goals>
@@ -117,6 +116,7 @@
                         <arg>java.xml,java.compiler</arg>
                         <arg>-proc:full</arg>
                         <arg>-Xplugin:Manifold</arg>
+                        <arg>-Amanifold.source.target=${project.build.directory}/manifold</arg>
                     </compilerArgs>
                     <annotationProcessorPaths>
                         <path>
