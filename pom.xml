@@ -118,18 +118,18 @@
                         <arg>-proc:full</arg>
 <!--                        <arg>-Xplugin:Manifold</arg>-->
                     </compilerArgs>
-                    <annotationProcessorPaths>
+<!--                    <annotationProcessorPaths>-->
 <!--                        <path>-->
 <!--                            <groupId>systems.manifold</groupId>-->
 <!--                            <artifactId>manifold-strings</artifactId>-->
 <!--                            <version>${oap.deps.manifold.version}</version>-->
 <!--                        </path>-->
-                        <path>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                            <version>${oap.deps.lombok.version}</version>
-                        </path>
-                    </annotationProcessorPaths>
+<!--                        <path>-->
+<!--                            <groupId>org.projectlombok</groupId>-->
+<!--                            <artifactId>lombok</artifactId>-->
+<!--                            <version>${oap.deps.lombok.version}</version>-->
+<!--                        </path>-->
+<!--                    </annotationProcessorPaths>-->
                 </configuration>
             </plugin>
             <plugin>
