@@ -202,6 +202,12 @@
                 <version>1.18.42</version>
                 <scope>provided</scope>
             </dependency>
+            <dependency>
+                <groupId>systems.manifold</groupId>
+                <artifactId>manifold-strings</artifactId>
+                <version>${oap.deps.manifold.version}</version>
+                <scope>provided</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>
