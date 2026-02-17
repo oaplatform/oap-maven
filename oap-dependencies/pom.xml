@@ -197,6 +197,12 @@
             </dependency>
 
             <dependency>
+                <groupId>systems.manifold</groupId>
+                <artifactId>manifold-strings</artifactId>
+                <version>${oap.deps.manifold.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${oap.deps.lombok.version}</version>
