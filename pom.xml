@@ -77,7 +77,7 @@
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>${oap.deps.maven.checkstyle.version}</version>
                 <configuration>
-                    <configLocation>https://raw.githubusercontent.com/oaplatform/oap-maven/master/.idea/checkstyle.xml</configLocation>
+                    <configLocation>google_checks.xml</configLocation>
                     <encoding>UTF-8</encoding>
                     <consoleOutput>true</consoleOutput>
                     <failsOnError>true</failsOnError>
