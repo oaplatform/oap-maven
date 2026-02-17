@@ -43,6 +43,7 @@
         <oap.deps.maven.jar.version>3.4.2</oap.deps.maven.jar.version>
         <oap.deps.maven.compiler.version>3.14.0</oap.deps.maven.compiler.version>
         <oap.deps.maven.enforcer.version>3.6.1</oap.deps.maven.enforcer.version>
+        <oap.deps.lombok.version>1.18.42</oap.deps.lombok.version>
         <oap.deps.manifold.version>2026.1.4</oap.deps.manifold.version>
         <min.maven.version>3.6.3</min.maven.version>
     </properties>
@@ -90,6 +91,11 @@
                             <groupId>systems.manifold</groupId>
                             <artifactId>manifold-strings</artifactId>
                             <version>${oap.deps.manifold.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${oap.deps.lombok.version}</version>
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
