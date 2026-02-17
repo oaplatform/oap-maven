@@ -195,6 +195,13 @@
                 <artifactId>velocity-engine-core</artifactId>
                 <version>2.4.1</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${oap.deps.lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>
