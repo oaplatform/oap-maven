@@ -85,7 +85,7 @@
                         <arg>java.xml,java.compiler</arg>
                         <arg>-proc:full</arg>
                         <arg>-Xplugin:Manifold</arg>
-                        <arg>manifold.source.target=target/manifold</arg>
+                        <arg>-Amanifold.source.target=target/manifold</arg>
                     </compilerArgs>
                     <annotationProcessorPaths>
                         <path>
