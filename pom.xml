@@ -45,6 +45,7 @@
         <oap.deps.maven.enforcer.version>3.6.1</oap.deps.maven.enforcer.version>
         <min.maven.version>3.6.3</min.maven.version>
 
+        <oap.deps.lombook.version>1.18.46</oap.deps.lombook.version>
         <oap.deps.interp4j-processor.version>2.0.0_jre21</oap.deps.interp4j-processor.version>
     </properties>
 
@@ -96,6 +97,11 @@
                             <groupId>dev.khbd.interp4j</groupId>
                             <artifactId>interp4j-processor</artifactId>
                             <version>${oap.deps.interp4j-processor.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${oap.deps.lombook.version}</version>
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
