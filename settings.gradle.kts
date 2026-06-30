@@ -1,2 +1,2 @@
-rootProject.name = "oap-maven"
+rootProject.name = "oap.maven"
 include("oap-dependencies")
