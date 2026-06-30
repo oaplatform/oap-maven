@@ -3,6 +3,15 @@ plugins {
     `maven-publish`
 }
 
+gradlePlugin {
+    plugins {
+        named("oap.java-convention") {
+            displayName = "OAP Java Convention"
+            description = "Configures Java 25, Checkstyle, Lombok, interp4j, TestNG, and maven-publish for OAP projects"
+        }
+    }
+}
+
 allprojects {
     repositories {
         maven {

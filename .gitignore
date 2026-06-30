@@ -12,6 +12,9 @@
 /.idea/shelf
 /.idea/runConfigurations.xml
 
+/build
+/.gradle
+
 target
 .surefire*
 .attach_pid*

@@ -38,7 +38,7 @@ tasks.withType<JavaCompile>().configureEach {
 }
 
 checkstyle {
-    toolVersion = "10.24.0"
+    toolVersion = project.property("checkstyleVersion") as String
     config = resources.text.fromUri(
         "https://raw.githubusercontent.com/oaplatform/oap-maven/master/.idea/checkstyle.xml"
     )
