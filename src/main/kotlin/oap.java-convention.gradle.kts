@@ -67,7 +67,7 @@ tasks.withType<Test>().configureEach {
 configure<PublishingExtension> {
     publications {
         create<MavenPublication>("maven") {
-            from(components["java"])
+            from(components["kotlin"])
         }
     }
     repositories {
