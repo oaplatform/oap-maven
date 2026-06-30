@@ -1,6 +1,7 @@
 plugins {
     `kotlin-dsl`
     `maven-publish`
+    id("com.github.gmazzo.buildconfig") version "5.5.2"
 }
 
 gradlePlugin {
@@ -10,6 +11,12 @@ gradlePlugin {
             description = "Configures Java 25, Checkstyle, Lombok, interp4j, TestNG, and maven-publish for OAP projects"
         }
     }
+}
+
+buildConfig {
+    buildConfigField("String", "INTERP4J_VERSION", "\"${property("interp4jVersion")}\"")
+    buildConfigField("String", "LOMBOK_VERSION", "\"${property("lombokVersion")}\"")
+    buildConfigField("String", "CHECKSTYLE_VERSION", "\"${property("checkstyleVersion")}\"")
 }
 
 allprojects {

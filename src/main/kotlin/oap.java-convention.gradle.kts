@@ -11,8 +11,8 @@ java {
     withSourcesJar()
 }
 
-val interp4jVersion = project.property("interp4jVersion") as String
-val lombokVersion = project.property("lombokVersion") as String
+val interp4jVersion = BuildConfig.INTERP4J_VERSION
+val lombokVersion = BuildConfig.LOMBOK_VERSION
 
 dependencies {
     "compileOnly"("org.projectlombok:lombok:$lombokVersion")
@@ -38,7 +38,7 @@ tasks.withType<JavaCompile>().configureEach {
 }
 
 checkstyle {
-    toolVersion = project.property("checkstyleVersion") as String
+    toolVersion = BuildConfig.CHECKSTYLE_VERSION
     config = resources.text.fromUri(
         "https://raw.githubusercontent.com/oaplatform/oap-maven/master/.idea/checkstyle.xml"
     )
