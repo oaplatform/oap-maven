@@ -14,6 +14,7 @@ gradlePlugin {
 }
 
 buildConfig {
+    packageName("oap.maven")
     buildConfigField("String", "INTERP4J_VERSION", "\"${property("interp4jVersion")}\"")
     buildConfigField("String", "LOMBOK_VERSION", "\"${property("lombokVersion")}\"")
     buildConfigField("String", "CHECKSTYLE_VERSION", "\"${property("checkstyleVersion")}\"")

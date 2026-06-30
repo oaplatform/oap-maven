@@ -1,3 +1,5 @@
+import oap.maven.BuildConfig
+
 plugins {
     java
     checkstyle
