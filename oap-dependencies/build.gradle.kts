@@ -3,6 +3,9 @@ plugins {
     `maven-publish`
 }
 
+val interp4jVersion = project.property("interp4jVersion") as String
+val lombokVersion = project.property("lombokVersion") as String
+
 dependencies {
     constraints {
         api("com.google.code.gson:gson:2.13.2")
@@ -35,8 +38,8 @@ dependencies {
         api("software.amazon.awssdk:route53:2.40.5")
         api("software.amazon.awssdk.crt:aws-crt:0.40.3")
         api("org.apache.velocity:velocity-engine-core:2.4.1")
-        api("dev.khbd.interp4j:interp4j-core:2.0.0_jre21")
-        api("org.projectlombok:lombok:1.18.46")
+        api("dev.khbd.interp4j:interp4j-core:$interp4jVersion")
+        api("org.projectlombok:lombok:$lombokVersion")
     }
 }
 
