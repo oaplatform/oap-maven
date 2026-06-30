@@ -24,18 +24,21 @@ dependencies {
 }
 
 tasks.withType<JavaCompile>().configureEach {
+    options.isFork = true
     options.compilerArgs.addAll(
         listOf(
             "-parameters",
             "-Xlint:unchecked",
             "--add-modules", "java.xml,java.compiler",
             "-proc:full",
-            "-Xplugin:interp4j",
-            "-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED",
-            "-J--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED",
-            "-J--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED",
-            "-J--add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED"
+            "-Xplugin:interp4j"
         )
+    )
+    options.forkOptions.jvmArgs(
+        "--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED",
+        "--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED",
+        "--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED",
+        "--add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED"
     )
 }
 
