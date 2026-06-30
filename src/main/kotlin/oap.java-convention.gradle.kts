@@ -11,8 +11,8 @@ java {
     withSourcesJar()
 }
 
-val interp4jVersion = "2.0.0_jre21"
-val lombokVersion = "1.18.46"
+val interp4jVersion = project.property("interp4jVersion") as String
+val lombokVersion = project.property("lombokVersion") as String
 
 dependencies {
     "compileOnly"("org.projectlombok:lombok:$lombokVersion")
