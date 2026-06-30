@@ -34,11 +34,13 @@ tasks.withType<JavaCompile>().configureEach {
             "-Xplugin:interp4j"
         )
     )
-    options.forkOptions.jvmArgs(
-        "--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED",
-        "--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED",
-        "--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED",
-        "--add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED"
+    options.forkOptions.jvmArgs?.addAll(
+        listOf(
+            "--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED",
+            "--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED",
+            "--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED",
+            "--add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED"
+        )
     )
 }
 
@@ -77,8 +79,10 @@ configure<PublishingExtension> {
     }
     repositories {
         maven {
-            url = uri(project.findProperty("altRepositoryUri")
-                ?: "https://maven.xenoss.net/repository/oap-maven/")
+            url = uri(
+                project.findProperty("altRepositoryUri")
+                    ?: "https://maven.xenoss.net/repository/oap-maven/"
+            )
             val oapUsername = project.findProperty("oap.repository.user") as String?
             val oapPassword = project.findProperty("oap.repository.password") as String?
                 ?: System.getenv("CODEARTIFACT_AUTH_TOKEN")
