@@ -49,7 +49,7 @@ publishing {
     repositories {
         maven {
             url = uri(project.findProperty("altRepositoryUri")
-                ?: "https://artifacts.oaplatform.org/repository/oap-maven/")
+                ?: "https://maven.xenoss.net/repository/oap-maven/")
             val oapUsername = project.findProperty("oap.repository.user") as String?
             val oapPassword = project.findProperty("oap.repository.password") as String?
                 ?: System.getenv("CODEARTIFACT_AUTH_TOKEN")

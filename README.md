@@ -12,7 +12,7 @@ In child projects, declare the plugin repository in `settings.gradle.kts`:
 ```kotlin
 pluginManagement {
     repositories {
-        maven { url = uri("https://artifacts.oaplatform.org/repository/oap-maven/") }
+        maven { url = uri("https://maven.xenoss.net/repository/oap-maven/") }
         gradlePluginPortal()
     }
 }
